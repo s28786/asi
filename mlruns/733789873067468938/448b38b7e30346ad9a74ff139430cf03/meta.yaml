@@ -1,0 +1,14 @@
+artifact_uri: file:///E:/pjatk/asi/ASI-repo/mlruns/733789873067468938/448b38b7e30346ad9a74ff139430cf03/artifacts
+end_time: 1765921730412
+entry_point_name: ''
+experiment_id: '733789873067468938'
+lifecycle_stage: active
+run_id: 448b38b7e30346ad9a74ff139430cf03
+run_name: SVM
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1765921728255
+status: 3
+tags: []
+user_id: Linh

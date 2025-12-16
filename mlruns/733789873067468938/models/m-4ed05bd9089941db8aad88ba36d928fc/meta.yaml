@@ -1,0 +1,10 @@
+artifact_location: file:///E:/pjatk/asi/ASI-repo/mlruns/733789873067468938/models/m-4ed05bd9089941db8aad88ba36d928fc/artifacts
+creation_timestamp: 1765921730619
+experiment_id: '733789873067468938'
+last_updated_timestamp: 1765921732609
+model_id: m-4ed05bd9089941db8aad88ba36d928fc
+model_type: null
+name: model
+source_run_id: 32cdcc632c734bbdbb709ae3559effed
+status: 2
+status_message: null

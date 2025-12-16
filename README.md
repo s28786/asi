@@ -1,0 +1,38 @@
+# iris-mlflow-experiment
+
+This project demonstrates MLflow experiment tracking and model versioning using the Iris dataset.
+
+- Author: PJATK Student
+- For: Delivery 5
+
+## Setup (with uv)
+
+1. Create a virtual environment (recommended):
+   ```sh
+   uv venv .venv
+   .venv\Scripts\Activate.ps1  # On Windows PowerShell
+   # Or, for cmd: .venv\Scripts\activate.bat
+   # Or, for bash: source .venv/bin/activate
+   ```
+2. Install dependencies:
+   ```sh
+   uv pip install -r pyproject.toml
+   ```
+
+## Running
+
+- To train and log models:
+  ```sh
+  uv pip install .  # (if running as a package, otherwise skip)
+  python train_model.py
+  ```
+- To launch the MLflow UI:
+  ```sh
+  mlflow ui --backend-store-uri ./mlruns --port 5000
+  # Then open http://localhost:5000 in your browser
+  ```
+
+## Notes
+- All dependencies are managed via `pyproject.toml`.
+- No requirements.txt or environment.yml is needed.
+- Use `uv` for all dependency management and environment setup.

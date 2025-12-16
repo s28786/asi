@@ -1,0 +1,14 @@
+artifact_uri: file:///E:/pjatk/asi/ASI-repo/mlruns/733789873067468938/32cdcc632c734bbdbb709ae3559effed/artifacts
+end_time: 1765921732618
+entry_point_name: ''
+experiment_id: '733789873067468938'
+lifecycle_stage: active
+run_id: 32cdcc632c734bbdbb709ae3559effed
+run_name: KNN
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1765921730415
+status: 3
+tags: []
+user_id: Linh
