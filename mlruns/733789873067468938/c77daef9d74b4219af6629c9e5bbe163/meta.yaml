@@ -1,0 +1,14 @@
+artifact_uri: file:///E:/pjatk/asi/ASI-repo/mlruns/733789873067468938/c77daef9d74b4219af6629c9e5bbe163/artifacts
+end_time: 1765921728252
+entry_point_name: ''
+experiment_id: '733789873067468938'
+lifecycle_stage: active
+run_id: c77daef9d74b4219af6629c9e5bbe163
+run_name: LogisticRegression
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1765921726065
+status: 3
+tags: []
+user_id: Linh

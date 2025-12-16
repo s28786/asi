@@ -1,0 +1,14 @@
+artifact_uri: file:///E:/pjatk/asi/ASI-repo/mlruns/733789873067468938/cfccf072d3134ffa887d3badb4fa5707/artifacts
+end_time: 1765921732675
+entry_point_name: ''
+experiment_id: '733789873067468938'
+lifecycle_stage: active
+run_id: cfccf072d3134ffa887d3badb4fa5707
+run_name: likeable-goose-181
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1765921732635
+status: 3
+tags: []
+user_id: Linh

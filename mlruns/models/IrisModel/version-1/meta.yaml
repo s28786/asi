@@ -1,0 +1,15 @@
+creation_timestamp: 1765921732662
+current_stage: None
+deployment_job_state: null
+description: null
+last_updated_timestamp: 1765921732662
+model_id: null
+name: IrisModel
+run_id: 32cdcc632c734bbdbb709ae3559effed
+run_link: null
+source: file:///E:/pjatk/asi/ASI-repo/mlruns/733789873067468938/cfccf072d3134ffa887d3badb4fa5707/artifacts/model
+status: READY
+status_message: null
+storage_location: file:///E:/pjatk/asi/ASI-repo/mlruns/733789873067468938/cfccf072d3134ffa887d3badb4fa5707/artifacts/model
+user_id: null
+version: 1
