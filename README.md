@@ -7,16 +7,13 @@ This project demonstrates MLflow experiment tracking and model versioning using 
 
 ## Setup (with uv)
 
-1. Create a virtual environment (recommended):
+1. Setup:
    ```sh
    uv venv .venv
+   uv sync
    .venv\Scripts\Activate.ps1  # On Windows PowerShell
    # Or, for cmd: .venv\Scripts\activate.bat
    # Or, for bash: source .venv/bin/activate
-   ```
-2. Install dependencies:
-   ```sh
-   uv pip install -r pyproject.toml
    ```
 
 ## Running
