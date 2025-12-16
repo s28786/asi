@@ -7,7 +7,7 @@ This script trains four classifiers on the Iris dataset, logs all relevant metri
 selects the best model by F1-macro, saves the best model and metadata locally, and registers the best model in the MLflow Model Registry.
 
 Requirements:
-- MLflow must be installed: pip install mlflow
+- MLflow must be installed: uv pip install mlflow
 - The Iris.csv file must be present in the same directory as this script.
 - Output files: app/model.joblib, app/model_meta.json
 

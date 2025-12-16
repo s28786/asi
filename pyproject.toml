@@ -1,0 +1,51 @@
+[project]
+name = "iris-mlflow-experiment"
+version = "1.0.0"
+description = "Delivery 5: MLflow Experiment Tracking & Model Versioning with Iris Dataset"
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [
+    { name = "PJATK Student", email = "student@pjatk.edu.pl" }
+]
+
+# Dependencies required for the project
+dependencies = [
+    "mlflow>=3.0.0",
+    "scikit-learn>=1.0.0",
+    "joblib>=1.2.0",
+    "matplotlib>=3.5.0",
+    "pandas>=1.3.0",
+    "numpy>=1.20.0",
+    "streamlit>=1.20.0",  # For the Streamlit app requirement
+]
+
+# Development dependencies (optional, for testing/debugging)
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "black>=23.0.0",
+    "isort>=5.0.0",
+    "flake8>=5.0.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.uv]
+# uv-specific configuration (optional)
+python-preference = "managed"  # Use managed Python versions
+
+[tool.black]
+line-length = 100
+
+[tool.isort]
+profile = "black"
+line_length = 100
+
+[tool.hatch.build.targets.wheel]
+include = [
+    "app/**",
+    "train_model.py",
+    "Iris.csv"
+]
