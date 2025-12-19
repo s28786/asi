@@ -35,7 +35,6 @@ from sklearn.metrics import (
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelBinarizer
 
-# --- Constants and Paths ---
 EXPERIMENT_NAME = "iris-model-zoo"
 REGISTERED_MODEL_NAME = "IrisModel"
 VERSION = "v1.0.0"
@@ -49,7 +48,7 @@ MLFLOW_TRACKING_URI = os.path.join(os.path.dirname(__file__), "mlruns")
 os.makedirs(APP_DIR, exist_ok=True)
 
 # --- Set MLflow tracking URI to local mlruns directory (Model Registry requires file:// URI) ---
-mlflow.set_tracking_uri(f"file:///{MLFLOW_TRACKING_URI.replace(os.sep, '/')}")  # Use plain path, not file://
+mlflow.set_tracking_uri(f"file:///{MLFLOW_TRACKING_URI.replace(os.sep, '/')}")
 
 # --- Load Iris data ---
 df = pd.read_csv(CSV_PATH)
@@ -105,11 +104,13 @@ def log_model_run(model_name, model, X_train, y_train, X_test, y_test, tags):
                 y_proba = model.decision_function(X_test)
             except Exception:
                 y_proba = None
+
         # Metrics
         accuracy = accuracy_score(y_test, y_pred)
         f1_macro = f1_score(y_test, y_pred, average="macro")
         precision = precision_score(y_test, y_pred, average="macro")
         recall = recall_score(y_test, y_pred, average="macro")
+
         # ROC-AUC (multi-class, if possible)
         roc_auc = None
         try:
@@ -123,6 +124,7 @@ def log_model_run(model_name, model, X_train, y_train, X_test, y_test, tags):
                     roc_auc = roc_auc_score(y_test_bin, y_proba, average="macro", multi_class="ovr")
         except Exception:
             roc_auc = None
+
         # Log params, metrics, tags
         mlflow.log_param("model_name", model_name)
         mlflow.log_params(model.get_params())
@@ -133,17 +135,20 @@ def log_model_run(model_name, model, X_train, y_train, X_test, y_test, tags):
         mlflow.log_metric("recall", recall)
         if roc_auc is not None:
             mlflow.log_metric("roc_auc", roc_auc)
+
         # Confusion matrix
         cm = confusion_matrix(y_test, y_pred)
         cm_path = os.path.join(APP_DIR, f"cm_{model_name}.png")
         plot_confusion_matrix(cm, np.unique(y_test), model_name, cm_path)
         mlflow.log_artifact(cm_path, artifact_path="confusion_matrix")
+
         # Classification report
         report = classification_report(y_test, y_pred)
         report_path = os.path.join(APP_DIR, f"report_{model_name}.txt")
         with open(report_path, "w") as f:
             f.write(report)
         mlflow.log_artifact(report_path, artifact_path="classification_report")
+
         # Model file
         model_file = os.path.join(APP_DIR, f"{model_name}.joblib")
         joblib.dump(model, model_file)
@@ -162,9 +167,8 @@ def log_model_run(model_name, model, X_train, y_train, X_test, y_test, tags):
             "model_file": model_file
         }
 
-# --- Main pipeline: train, log, select, save, register ---
 def main():
-    # Set experiment before any runs (do NOT use mlflow.start_run() here)
+    # Set experiment before any runs
     mlflow.set_experiment(EXPERIMENT_NAME)
     experiment = mlflow.get_experiment_by_name(EXPERIMENT_NAME)
     print(f"[MLflow] Tracking URI: {mlflow.get_tracking_uri()}")

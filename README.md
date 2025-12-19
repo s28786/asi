@@ -1,10 +1,3 @@
-# iris-mlflow-experiment
-
-This project demonstrates MLflow experiment tracking and model versioning using the Iris dataset.
-
-- Author: PJATK Student
-- For: Delivery 5
-
 ## Setup (with uv)
 
 1. Setup:
